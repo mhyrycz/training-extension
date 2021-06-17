@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux'
-import beersSlice from './beersSlice';
+import trainingSlice from './trainingSlice';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
@@ -11,15 +11,13 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-  beers: beersSlice,
+  training: trainingSlice,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 export const store = configureStore({
-    reducer: {
-      persistedReducer
-    }
+    reducer: persistedReducer
 });
 
 export let persistor = persistStore(store)

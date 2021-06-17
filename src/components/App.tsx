@@ -1,7 +1,6 @@
-import { useState } from 'react';
 import './App.css';
 import { useAppSelector, useAppDispatch } from '../redux/hooks';
-import { selectBeers, updateBeersList } from "../redux/beersSlice";
+import { getTrainingType, updateTrainingType } from "../redux/trainingSlice";
 
 const onClick = () => {
   for(let i=0; i<5; i++) {
@@ -13,7 +12,7 @@ const onClick = () => {
 function App() {
   const dispatch = useAppDispatch()
 
-  const onClickUpdateBeers = () => dispatch(updateBeersList(["ale", "pale", "dark"]))
+  const onClickUpdateTraining = () => dispatch(updateTrainingType("klata"))
 
   return (
     <div className="App">
@@ -21,10 +20,10 @@ function App() {
         <button onClick={() => onClick()}>
           New Tabs
         </button>
-        <button type="button" onClick={onClickUpdateBeers}>
-                    pour Beers
+        <button type="button" onClick={onClickUpdateTraining}>
+          choose training
         </button>
-        {JSON.stringify(useAppSelector(selectBeers))}
+        {JSON.stringify(useAppSelector(getTrainingType))}
       </header>
     </div>
   );
