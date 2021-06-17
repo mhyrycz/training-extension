@@ -1,8 +1,6 @@
 import './App.css';
-import { useAppSelector, useAppDispatch } from '../redux/hooks';
-import { getTrainingType, updateTrainingType } from "../redux/trainingSlice";
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
+import TrainingType from './trainingType';
+import ChoosenTraining from './choosenTraining';
 
 const onClick = () => {
   for(let i=0; i<5; i++) {
@@ -12,14 +10,6 @@ const onClick = () => {
 }
 
 function App() {
-  const dispatch = useAppDispatch()
-
-  const handleChange = (event: React.ChangeEvent<{ name?: string; value: unknown }>) => {
-    const name = event.target.value as string
-    if (name) {
-      dispatch(updateTrainingType(name))
-    }
-  };
 
   return (
     <div className="App">
@@ -27,19 +17,8 @@ function App() {
         <button onClick={() => onClick()}>
           New Tabs
         </button>
-        <Select
-          labelId="demo-simple-select-placeholder-label-label"
-          id="demo-simple-select-placeholder-label"
-          value={useAppSelector(getTrainingType)}
-          onChange={handleChange}
-          displayEmpty
-          //className={classes.selectEmpty}
-        >
-          <MenuItem value={'bjs'}>BJS</MenuItem>
-          <MenuItem value={'pt'}>PT</MenuItem>
-          <MenuItem value={'mg'}>MG</MenuItem>
-        </Select>
-        {JSON.stringify(useAppSelector(getTrainingType))}
+        <TrainingType />
+        <ChoosenTraining />
       </header>
     </div>
   );

@@ -4,11 +4,13 @@ import { RootState } from './store'
 // Define a type for the slice state
 interface TrainingState {
     type: string | null;
+    choosenTraining: string | null;
 }
 
 // Define the initial state using that type
 const initialState: TrainingState = {
-    type: null, 
+    type: null,
+    choosenTraining: null,
 }
 
 export const trainingSlice = createSlice({
@@ -19,12 +21,17 @@ export const trainingSlice = createSlice({
             ...state,
             type: action.payload
         }),
+        updateChoosenTraining: (state, action: PayloadAction<string>) => ({
+            ...state,
+            choosenTraining: action.payload
+        }),
     }
 })
 
-export const { updateTrainingType } = trainingSlice.actions
+export const { updateTrainingType, updateChoosenTraining } = trainingSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
-export const getTrainingType = (state: RootState) => state.training.type
+export const getTrainingType = (state: RootState) => state.training.type;
+export const getChoosenTraining = (state: RootState) => state.training.choosenTraining;
 
 export default trainingSlice.reducer 
