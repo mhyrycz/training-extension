@@ -1,7 +1,7 @@
 import { useAppSelector } from '../../redux/hooks';
 import { getChoosenTraining } from '../../redux/trainingSlice';
 import Button from '@material-ui/core/Button';
-import { trainings } from '../../trainings';
+import { trainings, SeriesTypes } from '../../trainings';
 
 function TrainingSeries() {
   const choosenTrainingName = useAppSelector(getChoosenTraining);
@@ -22,10 +22,20 @@ function TrainingSeries() {
   const getChosenTrainingSeries = () => {
     const choosenTraining = trainings.find(t => t.name === choosenTrainingName);
     if (choosenTraining) {
+      const warmUpDuration = choosenTraining.series[SeriesTypes.WARM_UP]
+      const stretchingDuration = choosenTraining.series[SeriesTypes.STRETCHING]
       return (
         <>
-          <Button onClick={() => handlePickMovie(choosenTraining.warmUp)}>
-            Warm-up
+          <Button onClick={() => handlePickMovie(warmUpDuration)}>
+            {SeriesTypes.WARM_UP}
+          </Button>
+          {choosenTraining.series[SeriesTypes.MAIN].map((s, index) => (
+            <Button onClick={() => handlePickMovie(s)}>
+              {`Series ${index+1}`}
+            </Button>
+          ))}
+          <Button onClick={() => handlePickMovie(stretchingDuration)}>
+            {SeriesTypes.STRETCHING}
           </Button>
         </>
       )
