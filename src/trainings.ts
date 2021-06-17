@@ -1,13 +1,13 @@
 export enum TrainingTypes {
-  PT = 'PT',
-  BJS = 'BJS',
-  MG = 'MG'
+  PT = 'Pożeracz tłuszczu',
+  BJS = 'Brzuch jak skała',
+  MG = 'Mocna góra'
 }
 
 export enum SeriesTypes {
-  WARM_UP = 'Warm Up',
-  MAIN = 'Main',
-  STRETCHING = 'Stretching'
+  WARM_UP = 'Rozgrzewka',
+  MAIN = 'Główny',
+  STRETCHING = 'Rozciąganie'
 }
 
 interface Training {

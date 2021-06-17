@@ -21,7 +21,7 @@ export const trainingSlice = createSlice({
             ...state,
             type: action.payload
         }),
-        updateChoosenTraining: (state, action: PayloadAction<string>) => ({
+        updateChoosenTraining: (state, action: PayloadAction<string | null>) => ({
             ...state,
             choosenTraining: action.payload
         }),

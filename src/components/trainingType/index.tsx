@@ -1,7 +1,8 @@
-import { useAppSelector, useAppDispatch } from '../../redux/hooks';
-import { getTrainingType, updateTrainingType } from '../../redux/trainingSlice';
 import Select from '@material-ui/core/Select';
+import FormControl from '@material-ui/core/FormControl';
 import MenuItem from '@material-ui/core/MenuItem';
+import { useAppSelector, useAppDispatch } from '../../redux/hooks';
+import { getTrainingType, updateTrainingType, updateChoosenTraining } from '../../redux/trainingSlice';
 import { TrainingTypes } from '../../trainings';
 
 function TrainingType() {
@@ -11,22 +12,27 @@ function TrainingType() {
     const type = event.target.value as string
     if (type) {
       dispatch(updateTrainingType(type))
+      dispatch(updateChoosenTraining(null))
     }
   };
 
   return (
-    <Select
-      labelId='demo-simple-select-placeholder-label-label'
-      id='demo-simple-select-placeholder-label'
-      value={useAppSelector(getTrainingType)}
-      onChange={changeTrainingType}
-      displayEmpty
-      //className={classes.selectEmpty}
-    >
-      <MenuItem value={TrainingTypes.BJS}>{TrainingTypes.BJS}</MenuItem>
-      <MenuItem value={TrainingTypes.PT}>{TrainingTypes.PT}</MenuItem>
-      <MenuItem value={TrainingTypes.MG}>{TrainingTypes.MG}</MenuItem>
-    </Select>
+    <>
+      <div>
+        Wybierz linię treningową
+      </div>
+      <FormControl variant="outlined">
+        <Select
+          value={useAppSelector(getTrainingType)}
+          onChange={changeTrainingType}
+          //className={classes.selectEmpty}
+        >
+          <MenuItem value={TrainingTypes.BJS}>{TrainingTypes.BJS}</MenuItem>
+          <MenuItem value={TrainingTypes.PT}>{TrainingTypes.PT}</MenuItem>
+          <MenuItem value={TrainingTypes.MG}>{TrainingTypes.MG}</MenuItem>
+        </Select>
+      </FormControl>
+    </>
   );
 }
 

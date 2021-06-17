@@ -4,10 +4,7 @@ import ChoosenTraining from './choosenTraining';
 import TrainingSeries from './trainingSeries';
 
 const onClick = () => {
-  for(let i=0; i<5; i++) {
-    chrome.tabs.create({url:'https://qczaj.pl/moje-konto/my-favourites/'}, function(tab) {
-    });
-  }
+  chrome.tabs.create({url:'https://qczaj.pl/moje-konto/my-favourites/'});
 }
 
 function App() {
@@ -16,7 +13,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <button className="cycki" onClick={() => onClick()}>
-          New Tabs
+          Przejdź do Qczaj fitness
         </button>
         <TrainingType />
         <ChoosenTraining />

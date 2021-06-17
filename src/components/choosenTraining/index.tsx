@@ -1,7 +1,8 @@
+import Select from '@material-ui/core/Select';
+import FormControl from '@material-ui/core/FormControl';
+import MenuItem from '@material-ui/core/MenuItem';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { getChoosenTraining, getTrainingType, updateChoosenTraining } from '../../redux/trainingSlice';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
 import { trainings } from '../../trainings';
 
 function ChoosenTraining() {
@@ -23,16 +24,19 @@ function ChoosenTraining() {
   }
 
   return (
-    <Select
-      labelId='demo-simple-select-placeholder-label-label'
-      id='demo-simple-select-placeholder-label'
-      value={useAppSelector(getChoosenTraining)}
-      onChange={changeChoosenTraining}
-      displayEmpty
-      //className={classes.selectEmpty}
-    >
-      {getTrainingsForType()}
-    </Select>
+    <>
+    <div>
+      Wybierz trening
+    </div>
+    <FormControl variant='outlined'>
+      <Select
+        value={useAppSelector(getChoosenTraining)}
+        onChange={changeChoosenTraining}
+      >
+        {getTrainingsForType()}
+      </Select>
+    </FormControl>
+    </>
   );
 }
 
