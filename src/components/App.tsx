@@ -1,6 +1,7 @@
 import './App.css';
 import TrainingType from './trainingType';
 import ChoosenTraining from './choosenTraining';
+import TrainingSeries from './trainingSeries';
 
 const onClick = () => {
   for(let i=0; i<5; i++) {
@@ -14,11 +15,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <button onClick={() => onClick()}>
+        <button className="cycki" onClick={() => onClick()}>
           New Tabs
         </button>
         <TrainingType />
         <ChoosenTraining />
+        <TrainingSeries />
       </header>
     </div>
   );
