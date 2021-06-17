@@ -23,6 +23,7 @@ function MovieButton(props: ButtonType) {
   return (
     <Button
       variant="contained"
+      size="small"
       onClick={() => handlePickMovie(props.duration)}
     >
       {props.title}

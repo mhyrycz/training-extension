@@ -1,6 +1,5 @@
-import Select from '@material-ui/core/Select';
-import FormControl from '@material-ui/core/FormControl';
 import MenuItem from '@material-ui/core/MenuItem';
+import CustomSelect from '../select';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { getChoosenTraining, getTrainingType, updateChoosenTraining } from '../../redux/trainingSlice';
 import { trainings } from '../../trainings';
@@ -25,17 +24,14 @@ function ChoosenTraining() {
 
   return (
     <>
-    <div>
-      Wybierz trening
-    </div>
-    <FormControl variant='outlined'>
-      <Select
+      <div>
+        Wybierz trening
+      </div>
+      <CustomSelect
         value={useAppSelector(getChoosenTraining)}
         onChange={changeChoosenTraining}
-      >
-        {getTrainingsForType()}
-      </Select>
-    </FormControl>
+        options={getTrainingsForType()}
+      />
     </>
   );
 }
