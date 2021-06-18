@@ -1,7 +1,8 @@
 export enum TrainingTypes {
   PT = 'Pożeracz tłuszczu',
   BJS = 'Brzuch jak skała',
-  MG = 'Mocna góra'
+  MG = 'Mocna góra',
+  MS = 'Modelowanie sylwetki'
 }
 
 export enum SeriesTypes {
@@ -31,21 +32,48 @@ export const trainings: Training[] = [
     }
   },
   {
-    name: 'PT 2',
-    type: TrainingTypes.PT,
+    name: 'MG 2',
+    type: TrainingTypes.MG,
     series: {
-      [SeriesTypes.WARM_UP]: '7:21',
-      [SeriesTypes.MAIN]: ['7:21','7:21','7:21'],
-      [SeriesTypes.STRETCHING]: '7:21',
+      [SeriesTypes.WARM_UP]: '5:32',
+      [SeriesTypes.MAIN]: ['11:14','14:01'],
+      [SeriesTypes.STRETCHING]: '8:13',
+    }
+  },
+  {
+    name: 'MG 3',
+    type: TrainingTypes.MG,
+    series: {
+      [SeriesTypes.WARM_UP]: '5:32',
+      [SeriesTypes.MAIN]: ['15:03','13:55'],
+      [SeriesTypes.STRETCHING]: '8:13',
     }
   },
   {
     name: 'BJS 1',
     type: TrainingTypes.BJS,
     series: {
-      [SeriesTypes.WARM_UP]: '7:21',
-      [SeriesTypes.MAIN]: ['7:21','7:21','7:21'],
-      [SeriesTypes.STRETCHING]: '7:21',
+      [SeriesTypes.WARM_UP]: '5:14',
+      [SeriesTypes.MAIN]: ['9:59','9:28','10:03'],
+      [SeriesTypes.STRETCHING]: '4:16',
+    }
+  },
+  {
+    name: 'BJS 2',
+    type: TrainingTypes.BJS,
+    series: {
+      [SeriesTypes.WARM_UP]: '5:34',
+      [SeriesTypes.MAIN]: ['16:41','9:28','16:27'],
+      [SeriesTypes.STRETCHING]: '4:16',
+    }
+  },
+  {
+    name: 'Tabata 1',
+    type: TrainingTypes.MS,
+    series: {
+      [SeriesTypes.WARM_UP]: '6:52',
+      [SeriesTypes.MAIN]: ['10:14','11:45','17:21'],
+      [SeriesTypes.STRETCHING]: '6:19',
     }
   },
 ];

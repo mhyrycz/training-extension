@@ -19,6 +19,7 @@ function TrainingType() {
       <MenuItem value={TrainingTypes.BJS}>{TrainingTypes.BJS}</MenuItem>,
       <MenuItem value={TrainingTypes.PT}>{TrainingTypes.PT}</MenuItem>,
       <MenuItem value={TrainingTypes.MG}>{TrainingTypes.MG}</MenuItem>,
+      <MenuItem value={TrainingTypes.MS}>{TrainingTypes.MS}</MenuItem>,
   ]
 
   return (
