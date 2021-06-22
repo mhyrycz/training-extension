@@ -68,6 +68,15 @@ export const trainings: Training[] = [
     }
   },
   {
+    name: 'BJS 3',
+    type: TrainingTypes.BJS,
+    series: {
+      [SeriesTypes.WARM_UP]: '5:34',
+      [SeriesTypes.MAIN]: ['16:41','10:03','16:25'],
+      [SeriesTypes.STRETCHING]: '4:16',
+    }
+  },
+  {
     name: 'Tabata 1',
     type: TrainingTypes.MS,
     series: {

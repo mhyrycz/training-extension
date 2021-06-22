@@ -3,6 +3,7 @@ import CustomSelect from '../select';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { getTrainingType, updateTrainingType, updateChoosenTraining } from '../../redux/trainingSlice';
 import { TrainingTypes } from '../../trainings';
+import { TrainingTypeWrapper, Label } from './styles';
 
 function TrainingType() {
   const dispatch = useAppDispatch()
@@ -23,16 +24,16 @@ function TrainingType() {
   ]
 
   return (
-    <>
-      <div>
+    <TrainingTypeWrapper>
+      <Label>
         Wybierz linię treningową
-      </div>
+      </Label>
       <CustomSelect
         value={useAppSelector(getTrainingType)}
         onChange={changeTrainingType}
         options={typesOptions}
       />
-    </>
+    </TrainingTypeWrapper>
   );
 }
 

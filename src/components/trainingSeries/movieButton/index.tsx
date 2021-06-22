@@ -1,4 +1,8 @@
-import Button from '@material-ui/core/Button';
+import MuiButton from '@material-ui/core/Button';
+import { styled } from "@material-ui/core/styles";
+import { spacing } from "@material-ui/system";
+
+const Button = styled(MuiButton)(spacing);
 
 interface ButtonType {
   title: string;
@@ -22,11 +26,12 @@ function MovieButton(props: ButtonType) {
 
   return (
     <Button
+      marginRight={2}
       variant="contained"
       size="small"
       onClick={() => handlePickMovie(props.duration)}
     >
-      {props.title}
+      {props.title} - {props.duration}
     </Button>
   );
 
