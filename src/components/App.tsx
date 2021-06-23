@@ -9,7 +9,9 @@ function App() {
   const [isCorrectPage, setIsCorrectPage] = useState<boolean>(false);
 
   return (
-    <AppWrapper>
+    <AppWrapper
+      isCorrectPage={isCorrectPage}
+    >
         <GoToTraining 
           isCorrectPage={isCorrectPage}
           setIsCorrectPage={setIsCorrectPage}

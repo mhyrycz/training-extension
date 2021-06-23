@@ -5,12 +5,16 @@ export const GLOBAL_STYLES = {
   fontColor: 'white'
 }
 
-export const AppWrapper = styled.div`
+interface AppWrapperProps {
+  isCorrectPage: boolean;
+}
+
+export const AppWrapper = styled.div<AppWrapperProps>`
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: ${props => props.isCorrectPage ? 'flex-start' : 'center'};
   height: 100vh;
   font-size: 1rem;
   color: ${GLOBAL_STYLES.fontColor};
