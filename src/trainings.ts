@@ -23,7 +23,7 @@ interface Training {
 
 export const trainings: Training[] = [
   {
-    name: 'MG 1',
+    name: '1',
     type: TrainingTypes.MG,
     series: {
       [SeriesTypes.WARM_UP]: '5:32',
@@ -32,7 +32,7 @@ export const trainings: Training[] = [
     }
   },
   {
-    name: 'MG 2',
+    name: '2',
     type: TrainingTypes.MG,
     series: {
       [SeriesTypes.WARM_UP]: '5:32',
@@ -41,7 +41,7 @@ export const trainings: Training[] = [
     }
   },
   {
-    name: 'MG 3',
+    name: '3',
     type: TrainingTypes.MG,
     series: {
       [SeriesTypes.WARM_UP]: '5:32',
@@ -50,7 +50,7 @@ export const trainings: Training[] = [
     }
   },
   {
-    name: 'BJS 1',
+    name: '1',
     type: TrainingTypes.BJS,
     series: {
       [SeriesTypes.WARM_UP]: '5:14',
@@ -59,7 +59,7 @@ export const trainings: Training[] = [
     }
   },
   {
-    name: 'BJS 2',
+    name: '2',
     type: TrainingTypes.BJS,
     series: {
       [SeriesTypes.WARM_UP]: '5:34',
@@ -68,7 +68,7 @@ export const trainings: Training[] = [
     }
   },
   {
-    name: 'BJS 3',
+    name: '3',
     type: TrainingTypes.BJS,
     series: {
       [SeriesTypes.WARM_UP]: '5:34',
@@ -77,11 +77,29 @@ export const trainings: Training[] = [
     }
   },
   {
-    name: 'Tabata 1',
+    name: '1',
     type: TrainingTypes.MS,
     series: {
       [SeriesTypes.WARM_UP]: '6:52',
       [SeriesTypes.MAIN]: ['10:14','11:45','17:21'],
+      [SeriesTypes.STRETCHING]: '6:19',
+    }
+  },
+  {
+    name: '1',
+    type: TrainingTypes.PT,
+    series: {
+      [SeriesTypes.WARM_UP]: '6:52',
+      [SeriesTypes.MAIN]: ['10:03','10:13','10:06'],
+      [SeriesTypes.STRETCHING]: '6:19',
+    }
+  },
+  {
+    name: '2',
+    type: TrainingTypes.PT,
+    series: {
+      [SeriesTypes.WARM_UP]: '6:52',
+      [SeriesTypes.MAIN]: ['12:35','12:59','12:44'],
       [SeriesTypes.STRETCHING]: '6:19',
     }
   },
