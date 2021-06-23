@@ -38,7 +38,7 @@ function ChoosenTraining() {
   const getTrainingsForType = () => {
     const filtered = trainings.filter(t => t.type === choosenType)
     return filtered.map(t => (
-      <MenuItem value={t.name}>{t.name}</MenuItem>
+      <MenuItem value={t.variant}>{t.variant}</MenuItem>
     ))
   }
 
@@ -47,7 +47,7 @@ function ChoosenTraining() {
     {getTrainingGif()}
       <ChoosenTrainingWrapper>
         <Label>
-          Wybierz trening
+          Wybierz wariant
         </Label>
         <CustomSelect
           value={useAppSelector(getChoosenTraining)}

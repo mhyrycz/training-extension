@@ -1,12 +1,15 @@
 import { useAppSelector } from '../../redux/hooks';
-import { getChoosenTraining } from '../../redux/trainingSlice';
+import { getChoosenTraining, getTrainingType } from '../../redux/trainingSlice';
 import MovieButton from './movieButton';
 import { ButtonsWrapper, DurationInfo } from './styles';
 import { trainings, SeriesTypes } from '../../trainings';
 
 function TrainingSeries() {
+  const choosenTrainingType = useAppSelector(getTrainingType);
   const choosenTrainingName = useAppSelector(getChoosenTraining);
-  const choosenTraining = trainings.find(t => t.name === choosenTrainingName);
+  const choosenTraining = trainings.find(
+    t => t.variant === choosenTrainingName && t.type ===choosenTrainingType
+  );
 
   if (choosenTraining) {
     const warmUpDuration = choosenTraining.series[SeriesTypes.WARM_UP]

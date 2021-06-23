@@ -12,7 +12,7 @@ export enum SeriesTypes {
 }
 
 interface Training {
-  name: string;
+  variant: string;
   type: TrainingTypes;
   series: {
     [SeriesTypes.WARM_UP]: string
@@ -23,8 +23,8 @@ interface Training {
 
 export const trainings: Training[] = [
   {
-    name: '1',
     type: TrainingTypes.MG,
+    variant: '1',
     series: {
       [SeriesTypes.WARM_UP]: '5:32',
       [SeriesTypes.MAIN]: ['9:54','14:08','7:21'],
@@ -32,7 +32,7 @@ export const trainings: Training[] = [
     }
   },
   {
-    name: '2',
+    variant: '2',
     type: TrainingTypes.MG,
     series: {
       [SeriesTypes.WARM_UP]: '5:32',
@@ -41,7 +41,7 @@ export const trainings: Training[] = [
     }
   },
   {
-    name: '3',
+    variant: '3',
     type: TrainingTypes.MG,
     series: {
       [SeriesTypes.WARM_UP]: '5:32',
@@ -50,7 +50,7 @@ export const trainings: Training[] = [
     }
   },
   {
-    name: '1',
+    variant: '1',
     type: TrainingTypes.BJS,
     series: {
       [SeriesTypes.WARM_UP]: '5:14',
@@ -59,7 +59,7 @@ export const trainings: Training[] = [
     }
   },
   {
-    name: '2',
+    variant: '2',
     type: TrainingTypes.BJS,
     series: {
       [SeriesTypes.WARM_UP]: '5:34',
@@ -68,7 +68,7 @@ export const trainings: Training[] = [
     }
   },
   {
-    name: '3',
+    variant: '3',
     type: TrainingTypes.BJS,
     series: {
       [SeriesTypes.WARM_UP]: '5:34',
@@ -77,7 +77,7 @@ export const trainings: Training[] = [
     }
   },
   {
-    name: '1',
+    variant: '1',
     type: TrainingTypes.MS,
     series: {
       [SeriesTypes.WARM_UP]: '6:52',
@@ -86,7 +86,7 @@ export const trainings: Training[] = [
     }
   },
   {
-    name: '1',
+    variant: '1',
     type: TrainingTypes.PT,
     series: {
       [SeriesTypes.WARM_UP]: '6:52',
@@ -95,7 +95,7 @@ export const trainings: Training[] = [
     }
   },
   {
-    name: '2',
+    variant: '2',
     type: TrainingTypes.PT,
     series: {
       [SeriesTypes.WARM_UP]: '6:52',
