@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   hideIconPadding: {
-    "& .MuiOutlinedInput-input": {
+    '& .MuiOutlinedInput-input': {
       padding: '10px 32px 10px 20px'
     }
   }

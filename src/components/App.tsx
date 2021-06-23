@@ -1,23 +1,27 @@
+import { useState } from 'react';
 import './App.css';
 import TrainingType from './trainingType';
 import ChoosenTraining from './choosenTraining';
 import TrainingSeries from './trainingSeries';
-
-const onClick = () => {
-  chrome.tabs.create({url:'https://qczaj.pl/moje-konto/my-favourites/'});
-}
+import GoToTraining from './goToTraining';
 
 function App() {
+  const [isCorrectPage, setIsCorrectPage] = useState<boolean>(false);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <button className="cycki" onClick={() => onClick()}>
-          Przejdź do Qczaj fitness
-        </button>
-        <TrainingType />
-        <ChoosenTraining />
-        <TrainingSeries />
+    <div className='App'>
+      <header className='App-header'>
+        <GoToTraining 
+          isCorrectPage={isCorrectPage}
+          setIsCorrectPage={setIsCorrectPage}
+        />
+        {isCorrectPage && (
+          <>
+            <TrainingType />
+            <ChoosenTraining />
+            <TrainingSeries />
+          </>
+        )} 
       </header>
     </div>
   );
