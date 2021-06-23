@@ -1,13 +1,9 @@
-import MuiButton from '@material-ui/core/Button';
-import { styled } from '@material-ui/core/styles';
-import { spacing } from '@material-ui/system';
+import Button from '../button';
 
 interface Props {
   isCorrectPage: boolean;
   setIsCorrectPage: React.Dispatch<React.SetStateAction<boolean>>;
 }
-
-const Button = styled(MuiButton)(spacing);
 
 function GoToTraining({isCorrectPage, setIsCorrectPage}: Props) {
   const QCZAJ_PAGE = 'qczaj.pl/moje-konto/my-favourites/';
@@ -27,15 +23,12 @@ function GoToTraining({isCorrectPage, setIsCorrectPage}: Props) {
 
   return (
     <>
-    { !isCorrectPage && 
-    <Button 
-      marginRight={2}
-      variant='contained'
-      size='small'
-      onClick={() => goToPage()}
-    >
-      Przejdź do strony treningu
-    </Button>}
+      {!isCorrectPage && 
+        <Button
+          title='Przejdź do strony treningu'
+          onClick={() => goToPage()}
+        />
+      }
     </>
   );
 }
