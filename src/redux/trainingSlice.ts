@@ -1,9 +1,11 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { RootState } from './store'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from './store';
+import { TrainingTypes } from '../trainings';
+
 
 // Define a type for the slice state
 interface TrainingState {
-    type: string | null;
+    type: TrainingTypes | null;
     choosenTraining: string | null;
 }
 
@@ -17,7 +19,7 @@ export const trainingSlice = createSlice({
     name: 'training',
     initialState,
     reducers: {
-        updateTrainingType: (state, action: PayloadAction<string>) => ({
+        updateTrainingType: (state, action: PayloadAction<TrainingTypes>) => ({
             ...state,
             type: action.payload
         }),

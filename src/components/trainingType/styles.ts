@@ -9,6 +9,5 @@ export const TrainingTypeWrapper = styled.div`
 `;
 
 export const Label = styled.div`
-  font-size: 1rem;
   padding-right: 16px;
 `;

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './App.css';
+import { AppWrapper } from './globalStyles';
 import TrainingType from './trainingType';
 import ChoosenTraining from './choosenTraining';
 import TrainingSeries from './trainingSeries';
@@ -9,8 +9,7 @@ function App() {
   const [isCorrectPage, setIsCorrectPage] = useState<boolean>(false);
 
   return (
-    <div className='App'>
-      <header className='App-header'>
+    <AppWrapper>
         <GoToTraining 
           isCorrectPage={isCorrectPage}
           setIsCorrectPage={setIsCorrectPage}
@@ -21,9 +20,8 @@ function App() {
             <ChoosenTraining />
             <TrainingSeries />
           </>
-        )} 
-      </header>
-    </div>
+        )}
+    </AppWrapper>
   );
 }
 

@@ -9,5 +9,5 @@ export const ButtonsWrapper = styled.div`
 `;
 
 export const DurationInfo = styled.div`
-  font-size: 1rem;
+
 `;

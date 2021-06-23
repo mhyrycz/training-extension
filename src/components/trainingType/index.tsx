@@ -9,7 +9,7 @@ function TrainingType() {
   const dispatch = useAppDispatch()
 
   const changeTrainingType = (event: React.ChangeEvent<{ value: unknown }>) => {
-    const type = event.target.value as string
+    const type = event.target.value as TrainingTypes
     if (type) {
       dispatch(updateTrainingType(type))
       dispatch(updateChoosenTraining(null))
