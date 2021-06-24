@@ -107,7 +107,7 @@ export const trainings: Training[] = [
 
 
 
-interface Playlist {
+export interface Playlist {
   title: string;
   trainingType: TrainingTypes[];
   pace?: number;

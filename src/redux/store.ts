@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux'
 import trainingSlice from './trainingSlice';
+import musicSlice from './musicSlice';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
@@ -12,6 +13,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   training: trainingSlice,
+  music: musicSlice,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

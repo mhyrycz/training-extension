@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { AppWrapper } from './globalStyles';
 import TrainingType from './trainingType';
 import ChoosenTraining from './choosenTraining';
+import ChoosenMusic from './choosenMusic';
 import TrainingSeries from './trainingSeries';
 import GoToTraining from './goToTraining';
 
@@ -21,6 +22,7 @@ function App() {
             <TrainingType />
             <ChoosenTraining />
             <TrainingSeries />
+            <ChoosenMusic />
           </>
         )}
     </AppWrapper>
