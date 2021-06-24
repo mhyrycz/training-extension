@@ -18,9 +18,9 @@ function Genre() {
   }
 
   const changeChoosenGenre = (event: React.ChangeEvent<{ name?: string; value: unknown }>) => {
-    const training = event.target.value as MusicGenres
-    if (training) {
-      dispatch(updateMusicGenre(training))
+    const genre = event.target.value as MusicGenres
+    if (genre) {
+      dispatch(updateMusicGenre(genre));
     }
   };
 

@@ -26,7 +26,7 @@ export const musicSlice = createSlice({
             ...state,
             playlist: action.payload
         }),
-        updatePace: (state, action: PayloadAction<number>) => ({
+        updatePace: (state, action: PayloadAction<number | null>) => ({
             ...state,
             pace: action.payload
         }),

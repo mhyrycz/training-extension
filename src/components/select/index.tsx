@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
 
 interface CustomSelectProps {
   label: string;
-  value: string | null;
+  value: string | number | null;
   onChange: SelectProps['onChange'];
   options: JSX.Element[];
 }
