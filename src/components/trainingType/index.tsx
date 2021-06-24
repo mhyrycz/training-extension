@@ -2,8 +2,9 @@ import MenuItem from '@material-ui/core/MenuItem';
 import CustomSelect from '../select';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { getTrainingType, updateTrainingType, updateChoosenTraining } from '../../redux/trainingSlice';
+import { updateMusicGenre } from '../../redux/musicSlice';
 import { TrainingTypes } from '../../trainings';
-import { TrainingTypeWrapper, Label } from './styles';
+import { TrainingTypeWrapper } from './styles';
 
 function TrainingType() {
   const dispatch = useAppDispatch()
@@ -13,6 +14,7 @@ function TrainingType() {
     if (type) {
       dispatch(updateTrainingType(type))
       dispatch(updateChoosenTraining(null))
+      dispatch(updateMusicGenre(null))
     }
   };
 
@@ -25,10 +27,8 @@ function TrainingType() {
 
   return (
     <TrainingTypeWrapper>
-      <Label>
-        Wybierz linię treningową
-      </Label>
       <CustomSelect
+        label='Wybierz linię treningową'
         value={useAppSelector(getTrainingType)}
         onChange={changeTrainingType}
         options={typesOptions}

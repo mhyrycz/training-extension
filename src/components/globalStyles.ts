@@ -20,3 +20,13 @@ export const AppWrapper = styled.div<AppWrapperProps>`
   color: ${GLOBAL_STYLES.fontColor};
   background-image: linear-gradient(to bottom right, #B65EBA, #2E8DE1);
 `;
+
+export const SelectWithLabel = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const Label = styled.div`
+  padding-right: 16px;
+`;

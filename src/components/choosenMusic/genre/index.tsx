@@ -4,6 +4,7 @@ import { useAppSelector, useAppDispatch } from '../../../redux/hooks';
 import { getTrainingType } from '../../../redux/trainingSlice';
 import { getMusicGenre, updateMusicGenre } from '../../../redux/musicSlice';
 import { MusicGenres, musicPlaylists } from '../../../trainings';
+import { GenreWrapper } from './styles';
 
 function Genre() {
   const dispatch = useAppDispatch()
@@ -30,13 +31,14 @@ function Genre() {
   }
 
   return (
-    <>
+    <GenreWrapper>
       <CustomSelect
+        label='Wybierz gatunek muzyki'
         value={useAppSelector(getMusicGenre)}
         onChange={changeChoosenGenre}
         options={getGenresOptions()}
       />
-    </>
+    </GenreWrapper>
   );
 }
 

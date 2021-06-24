@@ -3,7 +3,7 @@ import CustomSelect from '../select';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { getChoosenTraining, getTrainingType, updateChoosenTraining } from '../../redux/trainingSlice';
 import { trainings, TrainingTypes } from '../../trainings';
-import { ChoosenTrainingWrapper, Label, GifComponent } from './styles';
+import { GifComponent } from './styles';
 import BJSGif from '../../gifs/BJS.gif';
 import PTGif from '../../gifs/PT.gif';
 import MGGif from '../../gifs/MG.gif';
@@ -44,17 +44,13 @@ function ChoosenTraining() {
 
   return (
     <>
-    {getTrainingGif()}
-      <ChoosenTrainingWrapper>
-        <Label>
-          Wybierz wariant
-        </Label>
-        <CustomSelect
-          value={useAppSelector(getChoosenTraining)}
-          onChange={changeChoosenTraining}
-          options={getTrainingsForType()}
-        />
-      </ChoosenTrainingWrapper>
+      {getTrainingGif()}
+      <CustomSelect
+        label='Wybierz wariant'
+        value={useAppSelector(getChoosenTraining)}
+        onChange={changeChoosenTraining}
+        options={getTrainingsForType()}
+      />
     </>
   );
 }

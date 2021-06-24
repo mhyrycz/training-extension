@@ -18,7 +18,7 @@ export const musicSlice = createSlice({
     name: 'music',
     initialState,
     reducers: {
-        updateMusicGenre: (state, action: PayloadAction<MusicGenres>) => ({
+        updateMusicGenre: (state, action: PayloadAction<MusicGenres | null>) => ({
             ...state,
             genre: action.payload
         }),

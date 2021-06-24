@@ -1,7 +1,7 @@
 import Select, { SelectProps } from '@material-ui/core/Select';
 import FormControl from '@material-ui/core/FormControl';
 import { makeStyles } from '@material-ui/core/styles';
-import { GLOBAL_STYLES } from '../globalStyles';
+import { GLOBAL_STYLES, SelectWithLabel, Label } from '../globalStyles';
 
 const useStyles = makeStyles(theme => ({
   hideIconPadding: {
@@ -14,30 +14,37 @@ const useStyles = makeStyles(theme => ({
 }));
 
 interface CustomSelectProps {
+  label: string;
   value: string | null;
   onChange: SelectProps['onChange'];
   options: JSX.Element[];
 }
 
 function CustomSelect({
+  label,
   value, 
   onChange, 
   options
 }: CustomSelectProps) {
   const classes = useStyles();
   return (
-    <FormControl 
-      variant='outlined' 
-      // className={classes.formControl}
-    >
-      <Select
-        value={value}
-        onChange={onChange}
-        className={classes.hideIconPadding}
+    <SelectWithLabel>
+      <Label>
+        {label}
+      </Label>
+      <FormControl 
+        variant='outlined' 
+        // className={classes.formControl}
       >
-        {options}
-      </Select>
-    </FormControl>
+        <Select
+          value={value}
+          onChange={onChange}
+          className={classes.hideIconPadding}
+        >
+          {options}
+        </Select>
+      </FormControl>
+    </SelectWithLabel>
   );
 }
 
