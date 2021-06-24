@@ -104,3 +104,106 @@ export const trainings: Training[] = [
     }
   },
 ];
+
+
+
+interface Playlist {
+  title: string;
+  trainingType: TrainingTypes[];
+  pace?: number;
+  genre: MusicGenres;
+  link: string;
+}
+
+export enum MusicGenres {
+  DANCE = 'Dance',
+  POP = 'Pop',
+  ROCK = 'Rock',
+  METAL = 'Metal',
+  LATINO= 'Latino',
+  ELECTRONIC= 'ELECTRONIC'
+}
+
+export const musicPlaylists: Playlist[] = [
+  {
+    title: "Aerobic Extreme Session 2018",
+    trainingType: [TrainingTypes.PT, TrainingTypes.BJS],
+    pace: 140,
+    genre: MusicGenres.DANCE,
+    link: "open.spotify.com/album/6wqfqstILMZPeK4VKRPau1"
+  },
+  {
+    title: "Aerobic Cardio Dance 2021",
+    trainingType: [TrainingTypes.PT, TrainingTypes.BJS],
+    pace: 140,
+    genre: MusicGenres.DANCE,
+    link: "open.spotify.com/album/4ZWbi0DDI9Q9wYNwN0OqLl"
+  },
+  {
+    title: "Aerobic Latino Hits 2021",
+    trainingType: [TrainingTypes.PT, TrainingTypes.BJS],
+    pace: 140,
+    genre: MusicGenres.LATINO,
+    link: "open.spotify.com/album/5bN5Zo9VTDyNJqLTpg4XRx"
+  },
+  {
+    title: "Aerobic Pop Hits 2020",
+    trainingType: [TrainingTypes.PT, TrainingTypes.BJS],
+    pace: 140,
+    genre: MusicGenres.POP,
+    link: "open.spotify.com/album/4Ax9tgUiH3jDvYrhrogERt"
+  },
+  {
+    title: "Metal Joggen",
+    trainingType: [TrainingTypes.PT, TrainingTypes.BJS],
+    pace: 140,
+    genre: MusicGenres.METAL,
+    link: "open.spotify.com/playlist/4gzH9aF5jbPm2AJlF77a51"
+  },
+  {
+    title: "Born to Run",
+    trainingType: [TrainingTypes.PT, TrainingTypes.BJS, TrainingTypes.MS],
+    pace: 150,
+    genre: MusicGenres.ROCK,
+    link: "open.spotify.com/playlist/37i9dQZF1DX0hWmn8d5pRe"
+  },
+  {
+    title: "Hity do Biegania",
+    trainingType: [TrainingTypes.PT, TrainingTypes.BJS, TrainingTypes.MS],
+    pace: 150,
+    genre: MusicGenres.POP,
+    link: "open.spotify.com/playlist/37i9dQZF1DXcyfxt5LN8Mv"
+  },
+  {
+    title: "Aerobic Hits Spring 2020",
+    trainingType: [TrainingTypes.PT, TrainingTypes.BJS],
+    pace: 135,
+    genre: MusicGenres.DANCE,
+    link: "open.spotify.com/album/56L5K4SxuUNKbQOgtwSUS7"
+  },
+  {
+    title: "Aerobic Hits Session 2018",
+    trainingType: [TrainingTypes.PT, TrainingTypes.BJS],
+    pace: 135,
+    genre: MusicGenres.DANCE,
+    link: "open.spotify.com/album/0DNcD12RccPGsj6fqmzcPB"
+  },
+  {
+    title: "Beast Mode Rock",
+    trainingType: [TrainingTypes.MG],
+    genre: MusicGenres.ROCK,
+    link: "open.spotify.com/playlist/37i9dQZF1DWZYWNM3NfvzJ"
+  },
+  {
+    title: "Beast Mode",
+    trainingType: [TrainingTypes.MG],
+    genre: MusicGenres.ELECTRONIC,
+    link: "open.spotify.com/playlist/37i9dQZF1DX76Wlfdnj7AP"
+  },
+  {
+    title: "Brutal Cardio",
+    trainingType: [TrainingTypes.MG, TrainingTypes.PT],
+    genre: MusicGenres.METAL,
+    link: "open.spotify.com/playlist/0o74GEIghSjz5zKEgQE42y"
+  },
+];
