@@ -33,7 +33,7 @@ function Genre() {
   return (
     <GenreWrapper>
       <CustomSelect
-        label='Wybierz gatunek muzyki'
+        label='Gatunek muzyki'
         value={useAppSelector(getMusicGenre)}
         onChange={changeChoosenGenre}
         options={getGenresOptions()}

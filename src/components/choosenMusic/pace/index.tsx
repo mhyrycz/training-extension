@@ -52,7 +52,7 @@ function Pace() {
           (
             <PaceWrapper>
               <CustomSelect
-                label='Wybierz tempo'
+                label='Tempo'
                 value={paceValue}
                 onChange={changeChoosenPace}
                 options={getPaceOptions()}

@@ -28,7 +28,7 @@ function TrainingType() {
   return (
     <TrainingTypeWrapper>
       <CustomSelect
-        label='Wybierz linię treningową'
+        label='Linia treningowa'
         value={useAppSelector(getTrainingType)}
         onChange={changeTrainingType}
         options={typesOptions}

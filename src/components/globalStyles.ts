@@ -29,4 +29,10 @@ export const SelectWithLabel = styled.div`
 
 export const Label = styled.div`
   padding-right: 16px;
+  padding-left: 16px;
+`;
+
+export const DefineTraining = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
