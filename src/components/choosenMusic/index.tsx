@@ -1,23 +1,21 @@
 import Genre from './genre';
 import Pace from './pace';
 import Playlist from './playlist';
-import { useAppSelector } from '../../redux/hooks';
-import { getChoosenTraining } from '../../redux/trainingSlice';
 import { GenrePaceWrapper } from './styles';
+import { Header, MaxWidth } from '../globalStyles';
 
 function ChoosenMusic() {
-  const choosenTraining = useAppSelector(getChoosenTraining);
-
   return (
-    <>
-      {Boolean(choosenTraining) && (
-        <GenrePaceWrapper>
-          <Genre/>
-          <Pace/>
-          <Playlist/>
-        </GenrePaceWrapper>
-      )}
-    </>
+    <MaxWidth>
+      <Header>
+        Muzyka
+      </Header>
+      <GenrePaceWrapper>
+        <Genre/>
+        <Pace/>
+        <Playlist/>
+      </GenrePaceWrapper>
+    </MaxWidth>
   );
 }
 

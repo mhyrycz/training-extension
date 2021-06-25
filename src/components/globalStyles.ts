@@ -38,3 +38,18 @@ export const DefineTraining = styled.div`
   display: flex;
   flex-direction: row;
 `;
+
+export const Header = styled.div`
+  border-bottom: 1px solid white;
+  font-size: 1.5rem;
+  text-align: start;
+  margin-top: 16px;
+`;
+
+export const MaxWidth = styled.div`
+  width: calc(100% - 32px);
+`;
+
+export const TrainingSeriesWrapper = styled(MaxWidth)`
+  height: 30%;
+`;

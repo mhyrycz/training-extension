@@ -1,11 +1,9 @@
 import { useState } from 'react';
-import { AppWrapper, DefineTraining } from './globalStyles';
-import TrainingType from './trainingType';
-import ChoosenTraining from './choosenTraining';
+import { AppWrapper } from './globalStyles';
 import ChoosenMusic from './choosenMusic';
 import TrainingSeries from './trainingSeries';
 import GoToTraining from './goToTraining';
-import TrainingGif from './trainingGif';
+import TrainingLine from './trainingLine';
 
 function App() {
   const [isCorrectPage, setIsCorrectPage] = useState<boolean>(false);
@@ -20,12 +18,8 @@ function App() {
         />
         {isCorrectPage && (
           <>
-            <DefineTraining>
-              <TrainingType />
-              <ChoosenTraining />
-            </DefineTraining>
-            <TrainingGif/>
-            <TrainingSeries />
+            <TrainingLine/>
+            <TrainingSeries/>
             <ChoosenMusic />
           </>
         )}

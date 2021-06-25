@@ -1,8 +1,8 @@
-import CustomSelect from '../select';
-import { useAppSelector, useAppDispatch } from '../../redux/hooks';
-import { getTrainingType, updateTrainingType, updateChoosenTraining } from '../../redux/trainingSlice';
-import { updateMusicGenre } from '../../redux/musicSlice';
-import { TrainingTypes } from '../../trainings';
+import CustomSelect from '../../select';
+import { useAppSelector, useAppDispatch } from '../../../redux/hooks';
+import { getTrainingType, updateTrainingType, updateChoosenTraining } from '../../../redux/trainingSlice';
+import { updateMusicGenre } from '../../../redux/musicSlice';
+import { TrainingTypes } from '../../../trainings';
 
 function TrainingType() {
   const dispatch = useAppDispatch()

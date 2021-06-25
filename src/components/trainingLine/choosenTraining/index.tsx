@@ -1,7 +1,7 @@
-import CustomSelect from '../select';
-import { useAppSelector, useAppDispatch } from '../../redux/hooks';
-import { getChoosenTraining, getTrainingType, updateChoosenTraining } from '../../redux/trainingSlice';
-import { trainings } from '../../trainings';
+import CustomSelect from '../../select';
+import { useAppSelector, useAppDispatch } from '../../../redux/hooks';
+import { getChoosenTraining, getTrainingType, updateChoosenTraining } from '../../../redux/trainingSlice';
+import { trainings } from '../../../trainings';
 
 function ChoosenTraining() {
   const dispatch = useAppDispatch()

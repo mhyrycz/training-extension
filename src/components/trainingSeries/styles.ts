@@ -8,6 +8,9 @@ export const ButtonsWrapper = styled.div`
   margin-bottom: 16px;
 `;
 
-export const DurationInfo = styled.div`
-
+export const NoTraining = styled.div`
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

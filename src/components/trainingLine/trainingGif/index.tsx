@@ -1,11 +1,11 @@
-import { useAppSelector } from '../../redux/hooks';
-import {getTrainingType } from '../../redux/trainingSlice';
-import { TrainingTypes } from '../../trainings';
+import { useAppSelector } from '../../../redux/hooks';
+import {getTrainingType } from '../../../redux/trainingSlice';
+import { TrainingTypes } from '../../../trainings';
 import { GifComponent } from './styles';
-import BJSGif from '../../gifs/BJS.gif';
-import PTGif from '../../gifs/PT.gif';
-import MGGif from '../../gifs/MG.gif';
-import MSGif from '../../gifs/MS.gif';
+import BJSGif from '../../../gifs/BJS.gif';
+import PTGif from '../../../gifs/PT.gif';
+import MGGif from '../../../gifs/MG.gif';
+import MSGif from '../../../gifs/MS.gif';
 
 function TrainingGif() {
   const choosenType = useAppSelector(getTrainingType);
