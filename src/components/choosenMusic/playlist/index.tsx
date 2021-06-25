@@ -36,19 +36,13 @@ function Playlist() {
 
 
   return (
-    <>
-      {
-        choosenGenre &&
-          (
-            <CustomSelect
-              label='Playlista'
-              value={choosenPlaylist}
-              onChange={changeChoosenPace}
-              getOptions={getPlaylistTitles}
-            />
-          )
-      }
-    </>
+    <CustomSelect
+      label='Playlista'
+      value={choosenPlaylist}
+      onChange={changeChoosenPace}
+      getOptions={getPlaylistTitles}
+      disabled={!Boolean(choosenGenre)}
+    />
   );
 }
 

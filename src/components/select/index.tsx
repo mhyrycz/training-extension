@@ -19,13 +19,15 @@ interface CustomSelectProps {
   value: string | number | null;
   onChange: SelectProps['onChange'];
   getOptions: () => (string | number)[];
+  disabled?: boolean;
 }
 
 function CustomSelect({
   label,
   value, 
   onChange, 
-  getOptions
+  getOptions,
+  disabled
 }: CustomSelectProps) {
 
   const classes = useStyles();
@@ -46,6 +48,7 @@ function CustomSelect({
           value={value}
           onChange={onChange}
           className={classes.hideIconPadding}
+          disabled={disabled}
         >
           {getOptionItems()}
         </Select>

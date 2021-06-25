@@ -36,14 +36,14 @@ function Pace() {
   return (
     <>
       {
-        isPaceIncluded && 
-        choosenGenre &&
+        isPaceIncluded &&
           (
             <CustomSelect
               label='Tempo'
               value={paceValue}
               onChange={changeChoosenPace}
               getOptions={getPaces}
+              disabled={!Boolean(choosenGenre)}
             />
           )
       }
