@@ -4,9 +4,10 @@ import { GLOBAL_STYLES } from '../globalStyles';
 interface Props {
   title: string;
   onClick: () => void;
+  disabled?: boolean;
 }
 
-const Button = ({onClick, title}: Props) => (
+const Button = ({onClick, title, disabled}: Props) => (
     <MuiButton
       style={{
         backgroundColor: GLOBAL_STYLES.buttonBackground, 
@@ -16,6 +17,7 @@ const Button = ({onClick, title}: Props) => (
       variant='contained'
       size='medium'
       onClick={() => onClick()}
+      disabled={disabled}
     >
       {title}
     </MuiButton>
