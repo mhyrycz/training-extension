@@ -5,7 +5,7 @@ import ChoosenTraining from './choosenTraining';
 import ChoosenMusic from './choosenMusic';
 import TrainingSeries from './trainingSeries';
 import GoToTraining from './goToTraining';
-import TrainingGif from './TrainingGif';
+import TrainingGif from './trainingGif';
 
 function App() {
   const [isCorrectPage, setIsCorrectPage] = useState<boolean>(false);

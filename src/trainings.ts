@@ -107,10 +107,10 @@ export const trainings: Training[] = [
 
 
 
-export interface Playlist {
+export interface PlaylistProps {
   title: string;
   trainingType: TrainingTypes[];
-  pace?: number;
+  pace: number | null;
   genre: MusicGenres;
   link: string;
 }
@@ -121,10 +121,10 @@ export enum MusicGenres {
   ROCK = 'Rock',
   METAL = 'Metal',
   LATINO= 'Latino',
-  ELECTRONIC= 'ELECTRONIC'
+  ELECTRONIC= 'Electronic'
 }
 
-export const musicPlaylists: Playlist[] = [
+export const musicPlaylists: PlaylistProps[] = [
   {
     title: "Aerobic Extreme Session 2018",
     trainingType: [TrainingTypes.PT, TrainingTypes.BJS],
@@ -191,18 +191,21 @@ export const musicPlaylists: Playlist[] = [
   {
     title: "Beast Mode Rock",
     trainingType: [TrainingTypes.MG],
+    pace: null,
     genre: MusicGenres.ROCK,
     link: "open.spotify.com/playlist/37i9dQZF1DWZYWNM3NfvzJ"
   },
   {
     title: "Beast Mode",
     trainingType: [TrainingTypes.MG],
+    pace: null,
     genre: MusicGenres.ELECTRONIC,
     link: "open.spotify.com/playlist/37i9dQZF1DX76Wlfdnj7AP"
   },
   {
     title: "Brutal Cardio",
     trainingType: [TrainingTypes.MG, TrainingTypes.PT],
+    pace: null,
     genre: MusicGenres.METAL,
     link: "open.spotify.com/playlist/0o74GEIghSjz5zKEgQE42y"
   },

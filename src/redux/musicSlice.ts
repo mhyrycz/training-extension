@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from './store';
-import { MusicGenres, Playlist } from '../trainings';
+import { MusicGenres, PlaylistProps } from '../trainings';
 
 interface MusicState {
     genre: MusicGenres | null;
-    playlist: Playlist | null;
+    playlist: PlaylistProps['title'] | null;
     pace: number | null;
 }
 
@@ -18,15 +18,15 @@ export const musicSlice = createSlice({
     name: 'music',
     initialState,
     reducers: {
-        updateMusicGenre: (state, action: PayloadAction<MusicGenres | null>) => ({
+        updateMusicGenre: (state, action: PayloadAction<MusicState['genre']>) => ({
             ...state,
             genre: action.payload
         }),
-        updatePlaylist: (state, action: PayloadAction<Playlist>) => ({
+        updatePlaylist: (state, action: PayloadAction<MusicState['playlist']>) => ({
             ...state,
             playlist: action.payload
         }),
-        updatePace: (state, action: PayloadAction<number | null>) => ({
+        updatePace: (state, action: PayloadAction<MusicState['pace']>) => ({
             ...state,
             pace: action.payload
         }),

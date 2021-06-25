@@ -4,7 +4,7 @@ import CustomSelect from '../../select';
 import { useAppSelector, useAppDispatch } from '../../../redux/hooks';
 import { getMusicPace, updatePace, getMusicGenre } from '../../../redux/musicSlice';
 import { getTrainingType } from '../../../redux/trainingSlice';
-import { TrainingTypes, Playlist, musicPlaylists } from '../../../trainings';
+import { TrainingTypes, PlaylistProps, musicPlaylists } from '../../../trainings';
 import { PaceWrapper } from './styles';
 
 function Pace() {
@@ -23,7 +23,6 @@ function Pace() {
     const filteredPlaylists = musicPlaylists.filter(p => 
       p.trainingType.find(type => type === trainingType) 
       && p.genre === choosenGenre
-      && p.pace
     );
     const paces = filteredPlaylists.map(p => p.pace) as number[];
     const uniquePaces = paces.filter((v, i, a) => a.indexOf(v) === i);
@@ -32,15 +31,13 @@ function Pace() {
 
   const getPaceOptions = () => {
     return getPaces().map(option => (
-      <MenuItem value={option}>{option}</MenuItem>
+      <MenuItem value={option}>{option ? option : 'Brak'}</MenuItem>
     ))
   }
 
   const changeChoosenPace = (event: React.ChangeEvent<{ name?: string; value: unknown }>) => {
-    const pace = event.target.value as Playlist["pace"];
-    if (pace) {
-      dispatch(updatePace(pace))
-    }
+    const pace = event.target.value as PlaylistProps["pace"];
+    dispatch(updatePace(pace))
   };
 
 
