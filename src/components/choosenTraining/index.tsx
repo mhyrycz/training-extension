@@ -1,4 +1,3 @@
-import MenuItem from '@material-ui/core/MenuItem';
 import CustomSelect from '../select';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { getChoosenTraining, getTrainingType, updateChoosenTraining } from '../../redux/trainingSlice';
@@ -17,9 +16,7 @@ function ChoosenTraining() {
 
   const getTrainingsForType = () => {
     const filtered = trainings.filter(t => t.type === choosenType)
-    return filtered.map(t => (
-      <MenuItem value={t.variant}>{t.variant}</MenuItem>
-    ))
+    return filtered.map(t => t.variant)
   }
 
   return (
@@ -27,7 +24,7 @@ function ChoosenTraining() {
       label='Wariant'
       value={useAppSelector(getChoosenTraining)}
       onChange={changeChoosenTraining}
-      options={getTrainingsForType()}
+      getOptions={getTrainingsForType}
     />
   );
 }

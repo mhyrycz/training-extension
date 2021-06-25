@@ -1,10 +1,8 @@
-import MenuItem from '@material-ui/core/MenuItem';
 import CustomSelect from '../select';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { getTrainingType, updateTrainingType, updateChoosenTraining } from '../../redux/trainingSlice';
 import { updateMusicGenre } from '../../redux/musicSlice';
 import { TrainingTypes } from '../../trainings';
-import { TrainingTypeWrapper } from './styles';
 
 function TrainingType() {
   const dispatch = useAppDispatch()
@@ -18,22 +16,22 @@ function TrainingType() {
     }
   };
 
-  const typesOptions =  [
-      <MenuItem value={TrainingTypes.BJS}>{TrainingTypes.BJS}</MenuItem>,
-      <MenuItem value={TrainingTypes.PT}>{TrainingTypes.PT}</MenuItem>,
-      <MenuItem value={TrainingTypes.MG}>{TrainingTypes.MG}</MenuItem>,
-      <MenuItem value={TrainingTypes.MS}>{TrainingTypes.MS}</MenuItem>,
-  ]
+  const getTrainingLines = () => {
+    return [
+      TrainingTypes.BJS,
+      TrainingTypes.PT,
+      TrainingTypes.MG,
+      TrainingTypes.MS
+    ];
+  }
 
   return (
-    <TrainingTypeWrapper>
-      <CustomSelect
-        label='Linia treningowa'
-        value={useAppSelector(getTrainingType)}
-        onChange={changeTrainingType}
-        options={typesOptions}
-      />
-    </TrainingTypeWrapper>
+    <CustomSelect
+      label='Linia treningowa'
+      value={useAppSelector(getTrainingType)}
+      onChange={changeTrainingType}
+      getOptions={getTrainingLines}
+    />
   );
 }
 

@@ -1,10 +1,8 @@
-import MenuItem from '@material-ui/core/MenuItem';
 import CustomSelect from '../../select';
 import { useAppSelector, useAppDispatch } from '../../../redux/hooks';
 import { getTrainingType } from '../../../redux/trainingSlice';
 import { getMusicGenre, updateMusicGenre } from '../../../redux/musicSlice';
 import { MusicGenres, musicPlaylists } from '../../../trainings';
-import { GenreWrapper } from './styles';
 
 function Genre() {
   const dispatch = useAppDispatch()
@@ -24,21 +22,13 @@ function Genre() {
     }
   };
 
-  const getGenresOptions = () => {
-    return getTrainingTypeGenres().map(genre => (
-      <MenuItem value={genre}>{genre}</MenuItem>
-    ))
-  }
-
   return (
-    <GenreWrapper>
-      <CustomSelect
-        label='Gatunek muzyki'
-        value={useAppSelector(getMusicGenre)}
-        onChange={changeChoosenGenre}
-        options={getGenresOptions()}
-      />
-    </GenreWrapper>
+    <CustomSelect
+      label='Gatunek'
+      value={useAppSelector(getMusicGenre)}
+      onChange={changeChoosenGenre}
+      getOptions={getTrainingTypeGenres}
+    />
   );
 }
 

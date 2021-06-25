@@ -1,4 +1,3 @@
-import MenuItem from '@material-ui/core/MenuItem';
 import { useEffect } from 'react';
 import CustomSelect from '../../select';
 import { useAppSelector, useAppDispatch } from '../../../redux/hooks';
@@ -26,12 +25,6 @@ function Playlist() {
     );
     const titles = filteredPlaylists.map(p => p.title);
     return titles
-  }
-
-  const getPlaylistOptions = () => {
-    return getPlaylistTitles().map(title => (
-      <MenuItem value={title}>{title}</MenuItem>
-    ))
   };
 
   const changeChoosenPace = (event: React.ChangeEvent<{ name?: string; value: unknown }>) => {
@@ -47,14 +40,12 @@ function Playlist() {
       {
         choosenGenre &&
           (
-            // <PaceWrapper>
-              <CustomSelect
-                label='Playlista'
-                value={choosenPlaylist}
-                onChange={changeChoosenPace}
-                options={getPlaylistOptions()}
-              />
-            // </PaceWrapper>
+            <CustomSelect
+              label='Playlista'
+              value={choosenPlaylist}
+              onChange={changeChoosenPace}
+              getOptions={getPlaylistTitles}
+            />
           )
       }
     </>

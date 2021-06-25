@@ -14,7 +14,7 @@ const Button = ({onClick, title}: Props) => (
         marginRight: '16px'
       }}
       variant='contained'
-      size='small'
+      size='medium'
       onClick={() => onClick()}
     >
       {title}

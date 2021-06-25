@@ -1,11 +1,9 @@
-import MenuItem from '@material-ui/core/MenuItem';
 import { useEffect } from 'react';
 import CustomSelect from '../../select';
 import { useAppSelector, useAppDispatch } from '../../../redux/hooks';
 import { getMusicPace, updatePace, getMusicGenre } from '../../../redux/musicSlice';
 import { getTrainingType } from '../../../redux/trainingSlice';
 import { TrainingTypes, PlaylistProps, musicPlaylists } from '../../../trainings';
-import { PaceWrapper } from './styles';
 
 function Pace() {
   const dispatch = useAppDispatch()
@@ -29,12 +27,6 @@ function Pace() {
     return uniquePaces
   }
 
-  const getPaceOptions = () => {
-    return getPaces().map(option => (
-      <MenuItem value={option}>{option ? option : 'Brak'}</MenuItem>
-    ))
-  }
-
   const changeChoosenPace = (event: React.ChangeEvent<{ name?: string; value: unknown }>) => {
     const pace = event.target.value as PlaylistProps["pace"];
     dispatch(updatePace(pace))
@@ -47,14 +39,12 @@ function Pace() {
         isPaceIncluded && 
         choosenGenre &&
           (
-            <PaceWrapper>
-              <CustomSelect
-                label='Tempo'
-                value={paceValue}
-                onChange={changeChoosenPace}
-                options={getPaceOptions()}
-              />
-            </PaceWrapper>
+            <CustomSelect
+              label='Tempo'
+              value={paceValue}
+              onChange={changeChoosenPace}
+              getOptions={getPaces}
+            />
           )
       }
     </>

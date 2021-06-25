@@ -1,4 +1,5 @@
 import Select, { SelectProps } from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import { makeStyles } from '@material-ui/core/styles';
 import { GLOBAL_STYLES, SelectWithLabel, Label } from '../globalStyles';
@@ -17,31 +18,36 @@ interface CustomSelectProps {
   label: string;
   value: string | number | null;
   onChange: SelectProps['onChange'];
-  options: JSX.Element[];
+  getOptions: () => (string | number)[];
 }
 
 function CustomSelect({
   label,
   value, 
   onChange, 
-  options
+  getOptions
 }: CustomSelectProps) {
+
   const classes = useStyles();
+
+  const getOptionItems = () => {
+    return getOptions().map(option => (
+      <MenuItem value={option}>{option ? option : 'Brak'}</MenuItem>
+    ))
+  };
+
   return (
     <SelectWithLabel>
       <Label>
         {label}
       </Label>
-      <FormControl 
-        variant='outlined' 
-        // className={classes.formControl}
-      >
+      <FormControl variant='outlined'>
         <Select
           value={value}
           onChange={onChange}
           className={classes.hideIconPadding}
         >
-          {options}
+          {getOptionItems()}
         </Select>
       </FormControl>
     </SelectWithLabel>

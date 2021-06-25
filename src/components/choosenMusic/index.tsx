@@ -11,13 +11,11 @@ function ChoosenMusic() {
   return (
     <>
       {Boolean(choosenTraining) && (
-        <>
-          <GenrePaceWrapper>
-            <Genre/>
-            <Pace/>
-          </GenrePaceWrapper>
+        <GenrePaceWrapper>
+          <Genre/>
+          <Pace/>
           <Playlist/>
-        </>
+        </GenrePaceWrapper>
       )}
     </>
   );
