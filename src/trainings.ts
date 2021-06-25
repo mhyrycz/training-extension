@@ -50,7 +50,7 @@ export const trainings: Training[] = [
     }
   },
   {
-    variant: '1',
+    variant: '3x10',
     type: TrainingTypes.BJS,
     series: {
       [SeriesTypes.WARM_UP]: '5:14',
@@ -59,7 +59,16 @@ export const trainings: Training[] = [
     }
   },
   {
-    variant: '2',
+    variant: '1x16 2x9',
+    type: TrainingTypes.BJS,
+    series: {
+      [SeriesTypes.WARM_UP]: '5:14',
+      [SeriesTypes.MAIN]: ['9:59','16:41','9:28'],
+      [SeriesTypes.STRETCHING]: '4:16',
+    }
+  },
+  {
+    variant: '2x16 1x9',
     type: TrainingTypes.BJS,
     series: {
       [SeriesTypes.WARM_UP]: '5:34',
@@ -68,7 +77,7 @@ export const trainings: Training[] = [
     }
   },
   {
-    variant: '3',
+    variant: '2x16 1x10',
     type: TrainingTypes.BJS,
     series: {
       [SeriesTypes.WARM_UP]: '5:34',
@@ -77,7 +86,7 @@ export const trainings: Training[] = [
     }
   },
   {
-    variant: '1',
+    variant: '1x10 1x11 1x17',
     type: TrainingTypes.MS,
     series: {
       [SeriesTypes.WARM_UP]: '6:52',
@@ -86,20 +95,38 @@ export const trainings: Training[] = [
     }
   },
   {
-    variant: '1',
+    variant: '3x10',
     type: TrainingTypes.PT,
     series: {
       [SeriesTypes.WARM_UP]: '6:52',
-      [SeriesTypes.MAIN]: ['10:03','10:13','10:06'],
+      [SeriesTypes.MAIN]: ['10:06','10:13','10:06'],
       [SeriesTypes.STRETCHING]: '6:19',
     }
   },
   {
-    variant: '2',
+    variant: '3x12',
     type: TrainingTypes.PT,
     series: {
       [SeriesTypes.WARM_UP]: '6:52',
       [SeriesTypes.MAIN]: ['12:35','12:59','12:44'],
+      [SeriesTypes.STRETCHING]: '6:19',
+    }
+  },
+  {
+    variant: '1x12 2x10',
+    type: TrainingTypes.PT,
+    series: {
+      [SeriesTypes.WARM_UP]: '6:52',
+      [SeriesTypes.MAIN]: ['12:35','10:06','10:13'],
+      [SeriesTypes.STRETCHING]: '6:19',
+    }
+  },
+  {
+    variant: '2x12 1x10',
+    type: TrainingTypes.PT,
+    series: {
+      [SeriesTypes.WARM_UP]: '6:52',
+      [SeriesTypes.MAIN]: ['12:35','10:13','12:59'],
       [SeriesTypes.STRETCHING]: '6:19',
     }
   },
