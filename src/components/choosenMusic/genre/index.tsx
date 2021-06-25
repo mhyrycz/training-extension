@@ -30,6 +30,7 @@ function Genre() {
       onChange={changeChoosenGenre}
       getOptions={getTrainingTypeGenres}
       disabled={!Boolean(choosenTraining)}
+      width='100px'
     />
   );
 }

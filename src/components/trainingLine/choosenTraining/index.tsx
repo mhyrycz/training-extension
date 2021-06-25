@@ -25,6 +25,7 @@ function ChoosenTraining() {
       value={useAppSelector(getChoosenTraining)}
       onChange={changeChoosenTraining}
       getOptions={getTrainingsForType}
+      width='200px'
     />
   );
 }

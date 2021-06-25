@@ -1,4 +1,5 @@
-import { DefineTraining, Header, MaxWidth } from '../globalStyles';
+import { SpaceBetween, Header, MaxWidth } from '../globalStyles';
+import { ColumnWrapper } from './styles';
 import TrainingType from './trainingType';
 import ChoosenTraining from './choosenTraining';
 import TrainingGif from './trainingGif';
@@ -9,11 +10,13 @@ function TrainingLine() {
       <Header>
         Linia treningowa
       </Header>
-      <DefineTraining>
-        <TrainingType />
-        <ChoosenTraining />
+      <SpaceBetween>
+        <ColumnWrapper>
+          <TrainingType />
+          <ChoosenTraining />
+        </ColumnWrapper>
         <TrainingGif/>
-      </DefineTraining>
+      </SpaceBetween>
     </MaxWidth>
   );
 }

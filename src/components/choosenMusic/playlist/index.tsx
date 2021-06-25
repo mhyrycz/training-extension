@@ -42,6 +42,7 @@ function Playlist() {
       onChange={changeChoosenPace}
       getOptions={getPlaylistTitles}
       disabled={!Boolean(choosenGenre)}
+      width='300px'
     />
   );
 }

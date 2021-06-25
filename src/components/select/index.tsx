@@ -4,22 +4,13 @@ import FormControl from '@material-ui/core/FormControl';
 import { makeStyles } from '@material-ui/core/styles';
 import { GLOBAL_STYLES, SelectWithLabel, Label } from '../globalStyles';
 
-const useStyles = makeStyles(theme => ({
-  hideIconPadding: {
-    '& .MuiOutlinedInput-input': {
-      padding: '10px 32px 10px 20px',
-    },
-    background: GLOBAL_STYLES.buttonBackground,
-    color: GLOBAL_STYLES.fontColor
-  }
-}));
-
 interface CustomSelectProps {
   label: string;
   value: string | number | null;
   onChange: SelectProps['onChange'];
   getOptions: () => (string | number)[];
   disabled?: boolean;
+  width: string;
 }
 
 function CustomSelect({
@@ -27,8 +18,20 @@ function CustomSelect({
   value, 
   onChange, 
   getOptions,
-  disabled
+  disabled,
+  width
 }: CustomSelectProps) {
+
+  const useStyles = makeStyles(theme => ({
+    hideIconPadding: {
+      '& .MuiOutlinedInput-input': {
+        padding: '10px 32px 10px 20px',
+      },
+      background: GLOBAL_STYLES.buttonBackground,
+      color: GLOBAL_STYLES.fontColor,
+      width
+    }
+  }));
 
   const classes = useStyles();
 

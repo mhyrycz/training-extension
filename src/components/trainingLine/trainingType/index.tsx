@@ -27,10 +27,11 @@ function TrainingType() {
 
   return (
     <CustomSelect
-      label='Linia treningowa'
+      label='Linia'
       value={useAppSelector(getTrainingType)}
       onChange={changeTrainingType}
       getOptions={getTrainingLines}
+      width='200px'
     />
   );
 }

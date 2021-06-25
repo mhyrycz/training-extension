@@ -2,8 +2,7 @@ import Genre from './genre';
 import Pace from './pace';
 import Playlist from './playlist';
 import GoToMusic from './goToMusic';
-import { GenrePaceWrapper } from './styles';
-import { Header, MaxWidth } from '../globalStyles';
+import { Header, MaxWidth, SpaceBetween } from '../globalStyles';
 
 function ChoosenMusic() {
   return (
@@ -11,11 +10,11 @@ function ChoosenMusic() {
       <Header>
         Muzyka
       </Header>
-      <GenrePaceWrapper>
+      <SpaceBetween>
         <Genre/>
         <Pace/>
         <Playlist/>
-      </GenrePaceWrapper>
+      </SpaceBetween>
       <GoToMusic/>
     </MaxWidth>
   );

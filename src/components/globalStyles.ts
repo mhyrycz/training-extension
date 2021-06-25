@@ -34,11 +34,6 @@ export const Label = styled.div`
   padding-left: 16px;
 `;
 
-export const DefineTraining = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
 export const Header = styled.div`
   border-bottom: 1px solid white;
   font-size: 1.5rem;
@@ -52,4 +47,10 @@ export const MaxWidth = styled.div`
 
 export const TrainingSeriesWrapper = styled(MaxWidth)`
   height: 30%;
+`;
+
+export const SpaceBetween = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;

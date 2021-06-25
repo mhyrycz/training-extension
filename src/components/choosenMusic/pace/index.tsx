@@ -44,6 +44,7 @@ function Pace() {
               onChange={changeChoosenPace}
               getOptions={getPaces}
               disabled={!Boolean(choosenGenre)}
+              width='90px'
             />
           )
       }
