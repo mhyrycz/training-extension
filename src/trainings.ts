@@ -50,7 +50,7 @@ export const trainings: Training[] = [
     }
   },
   {
-    variant: '3x10',
+    variant: '3x10 (1)',
     type: TrainingTypes.BJS,
     series: {
       [SeriesTypes.WARM_UP]: '5:14',
@@ -59,16 +59,7 @@ export const trainings: Training[] = [
     }
   },
   {
-    variant: '1x16 2x9',
-    type: TrainingTypes.BJS,
-    series: {
-      [SeriesTypes.WARM_UP]: '5:14',
-      [SeriesTypes.MAIN]: ['9:59','16:41','9:28'],
-      [SeriesTypes.STRETCHING]: '4:16',
-    }
-  },
-  {
-    variant: '2x16 1x9',
+    variant: '2x16 1x9 (2)',
     type: TrainingTypes.BJS,
     series: {
       [SeriesTypes.WARM_UP]: '5:34',
@@ -77,11 +68,20 @@ export const trainings: Training[] = [
     }
   },
   {
-    variant: '2x16 1x10',
+    variant: '2x16 1x10 (3)',
     type: TrainingTypes.BJS,
     series: {
       [SeriesTypes.WARM_UP]: '5:34',
       [SeriesTypes.MAIN]: ['16:41','10:03','16:25'],
+      [SeriesTypes.STRETCHING]: '4:16',
+    }
+  },
+  {
+    variant: '1x16 2x9 (4)',
+    type: TrainingTypes.BJS,
+    series: {
+      [SeriesTypes.WARM_UP]: '5:14',
+      [SeriesTypes.MAIN]: ['9:59','16:41','9:28'],
       [SeriesTypes.STRETCHING]: '4:16',
     }
   },
